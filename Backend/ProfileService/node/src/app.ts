@@ -1,5 +1,5 @@
 import express from "express";
-import http from "http";
+import { PORT } from "./config";
 
 interface Controller {
     router: express.Router;
@@ -9,14 +9,14 @@ class App {
     private app = express();
 
     constructor(controllers: Controller[]) {
-        this.initControllers(controllers);
         this.initMiddlewares();
+        this.initControllers(controllers);
         this.initDatabase();
     }
 
     public listen() {
-        this.app.listen(3000, () => {
-            console.log("Server is up and running on port 3000");
+        this.app.listen(PORT, () => {
+            console.log(`Server is up and running on port ${PORT}`);
         });
     }
 
