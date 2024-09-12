@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import { UserController } from "./routerLayer/user.controller";
 
 dotenv.config();
 
@@ -11,3 +12,5 @@ export const POOL_CONFIG = {
     user: process.env.SQL_UID,
     password: process.env.SQL_PWD,
 };
+
+export const ControllerTypes = [UserController];
