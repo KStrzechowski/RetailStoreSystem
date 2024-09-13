@@ -1,10 +1,8 @@
 import express from "express";
-import http from "http";
 import { ControllerTypes, PORT } from "./config";
 import { initializeDatabase } from "./dataAccessLayer/initializeDatabase";
 import { DataAccessLayer } from "./dataAccessLayer/dataAccessLayer";
 import { BusinessLogicLayer } from "./businessLogicLayer/businessLogicLayer";
-import { UserController } from "./routerLayer/user.controller";
 
 class App {
     private app = express();

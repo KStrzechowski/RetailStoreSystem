@@ -1,4 +1,4 @@
-import pg from "pg";
+import { Pool } from "pg";
 import { Database } from "../database";
 import {
     addUserPostgreSQL,
@@ -9,9 +9,9 @@ import {
 } from "./user";
 
 export class PostgreSQLDatabase implements Database {
-    public pg: pg.Pool;
+    public pg: Pool;
 
-    constructor(pg: pg.Pool) {
+    constructor(pg: Pool) {
         this.pg = pg;
     }
 
@@ -25,7 +25,8 @@ export class PostgreSQLDatabase implements Database {
     };
 
     public getUsers = async (): Promise<User[]> => await getUsersPostgreSQL();
-    public getUser = async (): Promise<User> => await getUserPostgreSQL();
+    public getUser = async (id: number): Promise<User> =>
+        await getUserPostgreSQL(this.pg, id);
     public addUser = async () => await addUserPostgreSQL();
     public editUser = async () => await editUserPostgreSQL();
 }

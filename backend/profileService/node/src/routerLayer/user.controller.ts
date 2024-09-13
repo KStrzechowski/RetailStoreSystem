@@ -22,7 +22,8 @@ export class UserController implements Controller {
         router
             .get("/", (req, res) => res.send("Hello world!"))
             .get("/:id", async (req, res) => {
-                const user = await this.DAL.getUser();
+                const { id } = req.params;
+                const user = await this.DAL.getUser(Number(id));
                 console.log(user);
                 res.json(user);
             });
