@@ -1,5 +1,5 @@
 import express from "express";
-import { ControllerTypes, PORT } from "./config";
+import { CONTROLLER_TYPES, PORT } from "./config";
 import { initializeDatabase } from "./dataAccessLayer/initializeDatabase";
 import { DataAccessLayer } from "./dataAccessLayer/dataAccessLayer";
 import { BusinessLogicLayer } from "./businessLogicLayer/businessLogicLayer";
@@ -30,7 +30,7 @@ class App {
     }
 
     private initControllers(DAL: DataAccessLayer, BLL: BusinessLogicLayer) {
-        for (const ControllerType of ControllerTypes) {
+        for (const ControllerType of CONTROLLER_TYPES) {
             const controller = new ControllerType(DAL, BLL);
 
             this.app.use("/", controller.router);
