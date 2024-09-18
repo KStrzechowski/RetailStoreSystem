@@ -1,5 +1,5 @@
-import { User } from "./user.model";
 import { Pool } from "pg";
+import { User } from "./user.model";
 
 export const getUserPostgreSQL = async (
     pg: Pool,

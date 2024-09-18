@@ -1,5 +1,9 @@
 import express from "express";
-import { CONTROLLER_TYPES, PORT } from "./config";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+import axios from "axios";
+import { CONTROLLER_TYPES, CORS_ORIGINS, NODE_ENV, PORT } from "./config";
 import { initializeDatabase } from "./dataAccessLayer/initializeDatabase";
 import { DataAccessLayer } from "./dataAccessLayer/dataAccessLayer";
 import { BusinessLogicLayer } from "./businessLogicLayer/businessLogicLayer";
@@ -18,7 +22,20 @@ class App {
         });
     }
 
-    private initMiddlewares() {}
+    private initMiddlewares() {
+        if (NODE_ENV === "dev") {
+            this.app.use(morgan("dev"));
+        }
+
+        this.app.use(
+            cors({
+                credentials: true,
+                origin: CORS_ORIGINS,
+            })
+        );
+
+        this.app.use(helmet());
+    }
 
     private async initLayers() {
         const database = initializeDatabase();
