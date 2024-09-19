@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { DataAccessLayer } from "../dataAccessLayer/dataAccessLayer";
-import { BusinessLogicLayer } from "../businessLogicLayer/businessLogicLayer";
+import { DataAccessLayer } from "../data-access-layer/data-access-layer";
+import { BusinessLogicLayer } from "../business-logic-layer/businessLogicLayer";
 
 export interface Controller {
     readonly router: Router;

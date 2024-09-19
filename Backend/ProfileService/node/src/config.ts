@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { UserController } from "./routerLayer/user/user.controller";
+import { UserController } from "./router-layer/user/user.controller";
 
 dotenv.config();
 

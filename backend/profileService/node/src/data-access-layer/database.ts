@@ -1,4 +1,4 @@
-import { User } from "./postgreSQL/user";
+import { User } from "./postgres/user";
 
 export interface Database {
     getEntity: (table: string, id: string) => Promise<any>;

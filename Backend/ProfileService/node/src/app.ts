@@ -3,13 +3,13 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { CONTROLLER_TYPES, CORS_ORIGINS, NODE_ENV, PORT } from "./config";
-import { initializeDatabase } from "./dataAccessLayer/initializeDatabase";
-import { DataAccessLayer } from "./dataAccessLayer/dataAccessLayer";
-import { BusinessLogicLayer } from "./businessLogicLayer/businessLogicLayer";
+import { initializeDatabase } from "./data-access-layer/initialize-database";
+import { DataAccessLayer } from "./data-access-layer/data-access-layer";
+import { BusinessLogicLayer } from "./business-logic-layer/businessLogicLayer";
 import {
     castErrorMiddleware,
     errorMiddleware,
-} from "./routerLayer/middlewares";
+} from "./router-layer/middlewares";
 
 class App {
     private app = express();

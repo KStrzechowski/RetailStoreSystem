@@ -1,5 +1,5 @@
-import HttpException from "./HttpException";
-export { ForbiddenException } from "./ForbiddenException";
-export { NotFoundException } from "./NotFoundException";
+import HttpException from "./http.exception";
+export { ForbiddenException } from "./forbidden.exception";
+export { NotFoundException } from "./not-found.exception";
 
 export { HttpException };

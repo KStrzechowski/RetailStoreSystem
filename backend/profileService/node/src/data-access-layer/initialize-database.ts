@@ -1,7 +1,7 @@
 import pg from "pg";
 import { POOL_CONFIG } from "../config";
 import { Database } from "./database";
-import { PostgreSQLDatabase } from "./postgreSQL/postgreSQLDatabase";
+import { PostgreSQLDatabase } from "./postgres/postgres-database";
 
 export const initializeDatabase = (): Database => initializePostgreSQL();
 

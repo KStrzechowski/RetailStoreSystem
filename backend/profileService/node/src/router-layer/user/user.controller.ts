@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { Controller } from "./../controller";
-import { DataAccessLayer } from "../../dataAccessLayer/dataAccessLayer";
-import { BusinessLogicLayer } from "../../businessLogicLayer/businessLogicLayer";
+import { Controller } from "../controller";
+import { DataAccessLayer } from "../../data-access-layer/data-access-layer";
+import { BusinessLogicLayer } from "../../business-logic-layer/businessLogicLayer";
 
 export class UserController implements Controller {
     readonly router = Router();
