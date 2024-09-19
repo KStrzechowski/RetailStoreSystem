@@ -2,11 +2,14 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import axios from "axios";
 import { CONTROLLER_TYPES, CORS_ORIGINS, NODE_ENV, PORT } from "./config";
 import { initializeDatabase } from "./dataAccessLayer/initializeDatabase";
 import { DataAccessLayer } from "./dataAccessLayer/dataAccessLayer";
 import { BusinessLogicLayer } from "./businessLogicLayer/businessLogicLayer";
+import {
+    castErrorMiddleware,
+    errorMiddleware,
+} from "./routerLayer/middlewares";
 
 class App {
     private app = express();
@@ -35,6 +38,8 @@ class App {
         );
 
         this.app.use(helmet());
+        this.app.use(errorMiddleware);
+        this.app.use(castErrorMiddleware);
     }
 
     private async initLayers() {
