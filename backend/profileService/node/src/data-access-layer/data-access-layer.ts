@@ -1,4 +1,4 @@
-import { Database } from "./database";
+import { Database } from './database';
 
 export class DataAccessLayer {
     private db: Database;
@@ -6,8 +6,7 @@ export class DataAccessLayer {
         this.db = db;
     }
 
-    public getEntity = async (table: string, id: string) =>
-        await this.db.getEntity(table, id);
+    public getEntity = async (table: string, id: string) => await this.db.getEntity(table, id);
 
     public getUsers = async () => await this.db.getUsers();
     public getUser = async (id: number) => await this.db.getUser(id);

@@ -1,11 +1,11 @@
-import { NextFunction, Request, Response, Router } from "express";
-import { Controller } from "../controller";
-import { DataAccessLayer } from "../../data-access-layer/data-access-layer";
-import { BusinessLogicLayer } from "../../business-logic-layer/businessLogicLayer";
+import { NextFunction, Request, Response, Router } from 'express';
+import { Controller } from '../controller';
+import { DataAccessLayer } from '../../data-access-layer/data-access-layer';
+import { BusinessLogicLayer } from '../../business-logic-layer/businessLogicLayer';
 
 export class UserController implements Controller {
     readonly router = Router();
-    readonly path = "/user";
+    readonly path = '/user';
     readonly DAL: DataAccessLayer;
     readonly BLL: BusinessLogicLayer;
 
@@ -19,7 +19,7 @@ export class UserController implements Controller {
     private initializeRouter() {
         const router = Router();
 
-        router.get("/", this.getUsers).get("/:id", this.getUser);
+        router.get('/', this.getUsers).get('/:id', this.getUser);
 
         this.router.use(this.path, router);
     }

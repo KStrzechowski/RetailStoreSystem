@@ -1,11 +1,11 @@
-import dotenv from "dotenv";
-import { UserController } from "./router-layer/user/user.controller";
+import dotenv from 'dotenv';
+import { UserController } from './router-layer/user/user.controller';
 
 dotenv.config();
 
 export const PORT = process.env.PORT || 5000;
 
-export const NODE_ENV = process.env.NODE_ENV || "dev";
+export const NODE_ENV = process.env.NODE_ENV || 'dev';
 
 export const POOL_CONFIG = {
     host: process.env.SQL_HOST,
