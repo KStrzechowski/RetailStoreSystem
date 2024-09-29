@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import { CONTROLLER_TYPES, CORS_ORIGINS, NODE_ENV, PORT } from './config';
 import { initializeDatabase } from './data-access-layer/initialize-database';
 import { DataAccessLayer } from './data-access-layer/data-access-layer';
-import { BusinessLogicLayer } from './business-logic-layer/businessLogicLayer';
+import { BusinessLogicLayer } from './business-logic-layer/business-logic-layer';
 import { castErrorMiddleware, errorMiddleware } from './router-layer/middlewares';
 
 class App {
